@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Header from "./Components/Header/Header";
+import Body from "./Components/Body/Body";
 
-function App() {
+const App = () => {
+  const [everthing, setEverything] = useState({});
+  const [topheadlines, setTopHeadlines] = useState({});
+  useEffect(() => {
+    const everything = async () => {
+      return fetch(
+        "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=6f678dc42acc4d56b9625ed613295017"
+      )
+        .then((response1) => response1.json())
+        .then((result1) => setEverything(result1));
+    };
+
+    const topheadlines = async () => {
+      return fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=6f678dc42acc4d56b9625ed613295017"
+      )
+        .then((response2) => response2.json())
+        .then((result2) => setTopHeadlines(result2));
+    };
+
+    everything();
+    topheadlines();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Body everthing={everthing} topheadlines={topheadlines} />
     </div>
   );
-}
+};
 
 export default App;

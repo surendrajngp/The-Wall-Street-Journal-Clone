@@ -1,0 +1,41 @@
+.Header {
+  border-bottom: 1px solid rgb(219, 219, 219);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.Logo-heading a {
+  font-weight: bold;
+  height: 33px;
+  margin-bottom: 0;
+  color: #555;
+  text-decoration: none;
+}
+.Logo-heading a:hover {
+  color: #555;
+}
+.Header > .container {
+  position: relative;
+}
+
+.Header .active {
+  color: black !important;
+  font-weight: bold;
+}
+
+.header-top-right {
+  position: absolute;
+  right: 0;
+}
+
+.header-top-right-inner {
+  display: flex;
+  gap: 10px;
+}
+
+.header-top-right-inner a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
