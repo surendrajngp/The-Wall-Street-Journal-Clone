@@ -1,9 +1,8 @@
 import React from "react";
 import "./Body.css";
-import { FILTER_ALLOW, Markup } from "interweave";
+import { Markup } from "interweave";
 
 const Body = ({ everthing, topheadlines }) => {
-  console.log(topheadlines);
   return (
     <div className="Body mt-5 mb-3">
       <div className="container">
@@ -48,11 +47,21 @@ const Body = ({ everthing, topheadlines }) => {
                               />
                             )}
                             <div className="head">
-                              <h3 className={idx === 5 ? " headline " : "h4"}>
+                              <h3
+                                className={
+                                  idx === 5 ? " headline text-center" : "h4"
+                                }
+                              >
                                 <a href={item.url}> {item.title}</a>
                               </h3>
                             </div>
-                            <p className="content text-break">
+                            <p
+                              className={
+                                idx === 5
+                                  ? "content text-break text-center"
+                                  : "content text-break"
+                              }
+                            >
                               {item.content.replace(/\n/g, "")}
                             </p>
                             <div className="description">

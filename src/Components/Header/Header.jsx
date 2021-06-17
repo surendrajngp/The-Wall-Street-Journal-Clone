@@ -15,7 +15,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-white pt-0">
           <div className="container-fluid">
             <a
-              class="navbar-brand d-lg-none"
+              className="navbar-brand d-lg-none"
               style={{ fontSize: "30px", fontWeight: "bold" }}
               href="#"
             >
