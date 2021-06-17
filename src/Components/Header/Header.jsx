@@ -1,18 +1,26 @@
 import React from "react";
 import "./Header.css";
+import { links } from "./links";
 const Header = () => {
   return (
-    <div className="Header bg-white">
+    <div className="Header bg-white py-2 py-sm-0">
       <div className="container">
         <div className="header-top d-flex justify-content-center align-items-center">
           <div className="col-12">
-            <h1 className=" h2 Logo-heading m-0 text-center">
+            <h1 className=" h2 Logo-heading m-0 text-center d-none d-lg-block">
               <a href="">THE WALL STREET JOURNAL</a>
             </h1>
           </div>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-white pt-0">
           <div className="container-fluid">
+            <a
+              class="navbar-brand d-lg-none"
+              style={{ fontSize: "30px", fontWeight: "bold" }}
+              href="#"
+            >
+              WSJ
+            </a>
             <button
               className="navbar-toggler"
               type="button"
@@ -29,67 +37,19 @@ const Header = () => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    World
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    U.S.
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Poliics
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Economy
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Business
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Tech
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Markets
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Opinion
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Life & Arts
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Real Estate
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    WSJ Magzine
-                  </a>
-                </li>
+                {links.map((link, key) => {
+                  return (
+                    <li className="nav-item" key={key}>
+                      <a
+                        className={key === 0 ? "nav-link active" : "nav-link"}
+                        aria-current="page"
+                        href={link.url}
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

@@ -2,27 +2,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;400&family=Source+Serif+Pro:wght@300;400&display=swap");
 .lineTop {
   height: 1px;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.623);
 }
 .article {
   border-bottom: 1px solid rgb(204, 203, 203);
 }
 .headline {
   color: rgba(0, 0, 0, 0.787);
-  font-size: 30px;
+  font-size: 2em;
   line-height: 36px;
   font-weight: 700;
   font-family: "Source Serif Pro", serif;
 }
 .content {
   font-family: Exchange, Georgia, serif;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 20px;
   color: #333;
 }
 
 .description {
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: 500;
   line-height: 20px;
+}
+
+ol {
+  list-style: disc;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 0.787) !important;
 }

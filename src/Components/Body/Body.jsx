@@ -13,7 +13,7 @@ const Body = ({ everthing, topheadlines }) => {
             <main>
               {everthing.articles && (
                 <div className="row">
-                  <div className="col-md-4 col-sm-6 px-sm-2 py-sm-2 ">
+                  <div className="col-md-4 col-sm-6 px-sm-2 py-sm-2 order-1 order-sm-0 ">
                     {everthing.articles.map((item, idx) => {
                       if (idx <= 4) {
                         return (
@@ -23,7 +23,9 @@ const Body = ({ everthing, topheadlines }) => {
                                 <a href={item.url}> {item.title}</a>
                               </h3>
                             </div>
-                            <p className="content text-break py-2">{item.content}</p>
+                            <p className="content text-break py-2">
+                              {item.content}
+                            </p>
                             <div className="description">
                               <Markup content={item.description} />
                             </div>
@@ -33,7 +35,7 @@ const Body = ({ everthing, topheadlines }) => {
                     })}
                   </div>
 
-                  <div className="col-md-5 col-sm-6 px-sm-2 py-sm-2 ">
+                  <div className="col-md-5  col-sm-6 px-sm-2 py-sm-2 ">
                     {everthing.articles.map((item, idx) => {
                       if (idx > 4 && idx <= 9) {
                         return (
@@ -61,7 +63,7 @@ const Body = ({ everthing, topheadlines }) => {
                       }
                     })}
                   </div>
-                  <div className="col-12 col-md-3 py-2">
+                  <div className="col-10 col-md-3 py-2 mx-auto">
                     {everthing.articles.map((item, idx) => {
                       if (idx > 9) {
                         return (
@@ -86,7 +88,7 @@ const Body = ({ everthing, topheadlines }) => {
             </main>
           </div>
 
-          <div className="news-right col-md-3">
+          <div className="news-right col-10 col-md-3 mx-auto">
             {/* Top headlines */}
             {topheadlines.articles && (
               <main>
@@ -95,7 +97,7 @@ const Body = ({ everthing, topheadlines }) => {
                     return (
                       <article className="article py-2" key={idx}>
                         <div className="head">
-                          <h3 className={"h5"}>
+                          <h3 className="h6">
                             <a href={item.url}> {item.title}</a>
                           </h3>
                         </div>
